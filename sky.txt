@@ -1,0 +1,188 @@
+﻿--------------------------------------------------------------------------------
+
+	              Program SKY - krótki opis.
+
+                (Litery polskie w standardzie UTF8)
+
+  Program powstaje już kilka lat (!), również wersja, której dotyczy opis,
+nie jest wersją ostateczną. Ma on dostarczać informacji o położeniu obiektów
+Układu Słonecznego względem Ziemi. Wersja z października 1992 umożliwia:
+
+- obliczanie współrzędnych biegunowych obiektów;
+- obliczanie współrzędnych horyzontalnych obiektów;
+- obliczanie faz Księżyca;
+- obliczanie wschodów i zachodów Słońca;
+- obliczanie zaćmień Słońca i Księżyca;
+- uwzględnianie (lub nie) refrakcji atmosferycznej;
+- obsługę myszki;
+- ustawianie daty, czasu, miejsca obserwacji, strefy czasowej;
+- uwzględnianie różnicy między czasem UTC (korygowanym) a UT.
+
+  Po uruchomieniu programu na ekranie wyświetlana jest informacja o autorze
+(tj. o mnie), a następnie o obsłudze programu. Po naciśnięciu klawisza ukazuje
+się już "właściwy" ekran. Zawiera on następujące dane:
+
+1. Nazwę i współrzędne miejsca obserwacji (dodatnie - N i E);
+2. Aktualną datę (w formacie polskim: ROK-MIESIĄC-DZIEŃ) i dzień tygodnia;
+3. Aktualną datę juliańska;
+4. Aktualny czas (GODZINA:MINUTY:SEKUNDY);
+5. Numer wybranej strefy czasowej z ewentualnym komentarzem;
+6. Różnicę UT-UTC dla wybranej daty w sekundach;
+7. Stan przełącznika włączającego uwzględnianie refrakcji atmosferycznej;
+8. Ramkę wyników obliczeń, a w niej dla każdego obiektu:
+   - nazwę obiektu;
+   - deklinację obiektu;
+   - rektascensję obiektu;
+   - azymut obiektu (liczony w stopniach od północy na wschód);
+   - wysokość obiektu (w stopniach nad horyzontem);
+   - fazę obiektu (dla obiektów poza Słońcem), podawaną jako kąt
+     o wierzchołku w punkcie obserwacji (w poprzedniej wersji - w środku Ziemi),
+     jednym ramieniu przechodzącym przez Słońce, a drugim przez dany obiekt;
+   - w przypadku wystąpienia zaćmienia za fazą wyświetlana jest litera E;
+9. Nazwy obiektów, których zaćmienia może wyznaczyć program.
+
+ad 1.
+  W programie na stałe wpisałem wpółrzędne ok. 70 miejsc wraz z ich nazwami;
+pierwsza część to miejsca w Gliwicach, następna - miasta i miejscowości
+województwa katowickiego, trzecia - m&m Polski (poza woj. katowickim)
+i ostatnia - miasta na świecie poza Polską. Miejsce obserwacji można zmieniać
+korzystając z klawiatury (n - następne miejsce, N - porzednie) lub myszy
+(przez wskazanie kursorem wiersza ze współrzędnymi miejsca obserwacji i zmianę
+lewym lub prawym przyciskiem).
+
+ad 2.
+  Datę ustawia się klawiszami:
+r,R:  +/- dziesięć lat;
+y,Y:  +/- jeden rok;
+m,M:  +/- jeden miesiąc w granicach roku;
+d,D:  +/- jeden dzień w granicach miesiąca;
+j,J:  +/- jeden dzień (bez ograniczeń).
+  Można również użyć myszki - wskazując odpowiednią część daty i naciskając
+lewy (zmniejszenie) lub prawy (zwiększenie) przycisk.
+  Środkowy przycisk myszki i klawisz C ustawia aktualną (odzytaną z zegara 
+systemowego) datę i czas (pod warunkiem, że jest ona późniejsza od daty 
+zapisanej w programie jako aktualna).
+  Lata przed naszą erą oznaczane są jako ujemne; nie ma roku zerowego (po -1
+następuje rok 1); do 4 października 1582 obowiązuje kalendarz juliański,
+od 15 października 1582 - gregoriański.
+
+ad 3.
+  Stosowanie daty juliańskiej zaproponowane zostało w 1581 roku przez 
+J.Scaligera. Jest to czas, jaki upłynął od 1 stycznia 4713 p.n.e. do danej daty,
+wyrażony w dniach. Początek doby juliańskiej przypada na południe czasu UTC.
+
+ad 4.
+  Klawiatura:
+h,H: +/- jedna godzina w granicach dnia;
++,-: +/- jedna minuta (bez ograniczeń);
+s,S: +/- jedna sekunda (również bez ograniczeń).
+  Obsługa myszki - podobnie jak dla daty.
+
+ad 5.
+  Strefy czasowe nie pokrywają się z południkami, ale z granicami politycznymi.
+Strefę należy ustawić niezależnie od wybranego miejsca obserwacji. Dla Polski
+jest to strefa 1 - CET (Central European Time) lub 2 (w lecie).
+  Klawiatura:
+z,Z: +/- jedna strefa czasowa
+  Myszka: j.w.
+
+ad 6.
+  Ziemia zwalnia swoje obroty i dlatego konieczne jest korygowanie czasu
+(przeważnie robi się to dodając jedną sekundę po ostatnim dniu czerwca
+i grudnia). Dokładny charakter zmian prędkości Ziemi nie jest znany, dlatego
+nie jest możliwe dokładne wyznaczenie różnicy UT-UTC dla dowolnej daty
+w przyszłości. Program oblicza tę różnicę z dokładnością półsekundową dla lat
+1800..1986 (różnica jest znana z obserwacji), dla innych - przybliża wzorem
+ekstrapolującym dotychczasowe obserwacje. 
+  Oczywiście wartość w ramce dT zależy od ustawionej daty.
+
+ad 7.
+  Światło przechodząc między ośrodkami o różnych współczynnikach załamania
+ulega załamaniu - zmienia swój kierunek. Powietrze ma różny współczynnik 
+zalamania światła w zależności od wysokości nad ziemią (i ew. warunków 
+fizycznych - głównie temperatury). Promienie docierające do obserwatora na Ziemi
+z odległych obiektów ulegeją załamaniu tym większemu, im bliżej horyzontu są
+widoczne (tzn. im większa jest ich odległość zenitalna). Na horyzoncie
+refracja jest równa ok. 35 minut kątowych (dla porównania - Słońce ma średnicę
+kątową ok. 30 minut kątowych). Gdy przełącznik Ref ustawiony jest na YES,
+ugięcie światła uwzględniane jest przy obliczaniu wysokości obiektu nad
+horyzontem (oczywiście tylko wtedy, gdy może on być obserwowany, tzn. znajduje
+się powyżej horyzontu (po uwzględnieniu refrakcji)).
+
+ad 8.
+Obiekty - na razie tylko Słońce i Księżyc.
+Deklinacja - odpowiada szerokości geograficznej.
+Rektascensja - odpowiada długości geograficznej.
+Azymut - liczony od północy na wschód.
+Wysokość - liczona w stopniach od horyzontu.
+Odległość - wyrażona w kilometrach od środka Ziemi do środka obiektu.
+Faza - opis niżej.
+
+
+FAZY KSIĘŻYCA
+--------------
+Naciskając f (F) lub wskazując obliczoną fazę Księżyca myszka (i naciskając
+przycisk lewy lub prawy) można obliczyć kolejne fazy Księżyca. Przez sekundę
+wyświetlany jest opis (now, pelnia itd.), a następnie - kąt.
+W przypadku, gdy jego wartość jest mniejsza od 0.5 stopnia (>179.5), wyświetlana
+jest litera E oznaczająca zaćmienie - w przypadku nowiu Słońca, a pełni - 
+Księżyca. 
+
+
+WSCHODY I ZACHODY SŁOŃCA
+------------------------
+Naciskając klawisz w (W) lub wskazując kursorem myszki wysokość Słońca (height)
+(i naciskając przycisk lewy lub prawy) można wyznaczyć moment przejścia środka
+tarczy słonecznej przez linię horyzontu (tj. moment, dla którego współrzędna 
+height = 0 ). Moment ten zależy od daty, wybranego miejsca obserwacji i faktu 
+uwzględniania (lub nie) refrakcji atmosferycznej.
+Uwaga. W kalendarzach podawane są momenty wschodu i zachodu dla "górnej" krawę-
+dzi terczy słonecznej, a nie (jak tu) dla jej środka.
+W punktach obserwacji odległych o ok. 3 kilometry różnice wyznaczonych momentów
+mogą sięgać nawet 10 sekund.
+
+
+
+ad 9.
+Wskazując kursorem myszki jeden ze znaków "<" lub ">" sąsiadujących z nazwą
+obiektu można znaleźć najbliższe przeszłe lub przyszłe zaćmienie obiektu
+(Słońca przez Księżyc, Księżyca przez Ziemię).
+Trzy przełączniki umieszczone za nazwami obiektów umożliwiają określenie,
+jakiego typu zaćmień mają dotyczyć obliczenia (stan aktywny - duże litery):
+VIS - tylko zaćmienia, dla których obiekt jest widoczny ponad horyzontem;
+TOT - tylko zaćmienia całkowite; UWAGA: dla Słońca przy włączonej opcji TOT
+      poszukiwane są zaćmienia widoczne jako całkowite GDZIEKOLWIEK na Ziemi  
+      (najczęściej w miejscu obserwacji nie są one całkowite);
+LOC - dla zaćmień Słońca: tylko zaćmienia widziane jako całkowite w miejscu
+      obserwacji.
+Sterowanie klawiaturą: 
+1,2 - z. Słońca;
+3,4 - z. Księżyca;
+5,6,7 - przełączniki VIS, TOT, LOC.
+
+
+
+
+--------------------------------------------------------------------------------
+
+  Istnieją przeróbki programu SKY (pisane raczej na użytek własny) obliczające
+wschody i zachody Słońca (pt. SUNRISE) oraz wykreślające zegary słoneczne
+(pt. SUNCLOCK).
+
+--------------------------------------------------------------------------------
+
+  Program jeszcze nic nie kosztuje (prawdopodobnie i tak nie ma to żadnego
+znaczenia w przypadku kopiowania). Proszę o kopiowanie programu wraz z opisem
+i nie dokonywanie zmian. Program został skompilowany kompilatorem 
+Turbo Pascal 5.0. 
+
+--------------------------------------------------------------------------------
+                             Gliwice, 1991-10-02
+--------------------------------------------------------------------------------
+
+Autor:  	Piotr C. Fabian
+		skr. poczt.  12
+		44102 Gliwice 2
+
+--------------------------------------------------------------------------------
+

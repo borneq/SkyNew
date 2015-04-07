@@ -1,0 +1,677 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Sky'
+  ClientHeight = 540
+  ClientWidth = 620
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  KeyPreview = True
+  OldCreateOrder = False
+  OnCreate = FormCreate
+  OnKeyDown = FormKeyDown
+  OnKeyPress = FormKeyPress
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel
+    Left = 18
+    Top = 488
+    Width = 37
+    Height = 13
+    Caption = 'Eclipses'
+  end
+  object Label2: TLabel
+    Left = 125
+    Top = 488
+    Width = 20
+    Height = 13
+    Caption = 'SUN'
+  end
+  object Label3: TLabel
+    Left = 339
+    Top = 491
+    Width = 31
+    Height = 13
+    Caption = 'MOON'
+  end
+  object SpeedButton1: TSpeedButton
+    Left = 68
+    Top = 482
+    Width = 51
+    Height = 22
+    Caption = '<<<'
+    OnClick = SpeedButton1Click
+  end
+  object SpeedButton2: TSpeedButton
+    Left = 151
+    Top = 480
+    Width = 51
+    Height = 22
+    Caption = '>>>'
+    OnClick = SpeedButton2Click
+  end
+  object SpeedButton3: TSpeedButton
+    Left = 282
+    Top = 482
+    Width = 51
+    Height = 22
+    Caption = '<<<'
+    OnClick = SpeedButton3Click
+  end
+  object SpeedButton4: TSpeedButton
+    Left = 376
+    Top = 482
+    Width = 51
+    Height = 22
+    Caption = '>>>'
+    OnClick = SpeedButton4Click
+  end
+  object btnNasaSol: TSpeedButton
+    Left = 214
+    Top = 463
+    Width = 56
+    Height = 41
+    Enabled = False
+    Glyph.Data = {
+      360C0000424D360C000000000000360000002800000020000000200000000100
+      180000000000000C0000130B0000130B00000000000000000000E6FFECF9FBFF
+      FFF0FFFFF4FFFCFDFBF6FFF5FFFFF7FFFBF3FFFEF8FFFCFFE7F4FFDFF7FFE4FD
+      FFE6FEF6E2FCFCE0F9FFCDFCFFECFBFFFFFEF8FFFFF4F5FBF6ECF9FFF3FCFFF6
+      FFFFF6FFFBFFFFF9FFFDFEFFF8FFFFFCFFFEFFFAFFFFECFFFFE9FDFFF7FFFEFB
+      FFFAFFFFFEFFF8FFFCF6FFF7FDFAF6FFFBFFFFEEFFF9F8FFF3FFFFFDFFF9FFFF
+      F0FFFFEBFFFFF0FFFFF3FFF8F6FFFFF7FFFFF1FFFFF2F6FFF9EFFFFFEDF6FFF3
+      FCFFF4FEFEF9FFFAFFFFFCFFFEFFFBFEFFF6FFFFFEFDF9FFFBF4FFFEF5FFFBE8
+      FFFFF2F8FFFCEDFAFCF6FFFCFEFFF6FFF3FEFFF1FFFFF5FFFFFFF0FFFCBFFFDD
+      97FFC088FFB686FFB783FFCDA3FFD5B0FFF3D4FFFFE9FEFFEAF7FFF5FAFEFFF3
+      FAFFF1FDFFF6FFFFFDFFF9FDFFFBF2FEFEEEFDFFF8FBFFFFF6FFFFFFEEFFFFEE
+      FFFFF7EFEFFFF1FAFFF1FFFFF0FDE3FFFFF2FFF6FFFFBDC0D78C5ECA7918CE6B
+      00D45A00DD560AE75D14DF5804D45F1AC06832D79969FFE6B7FFFFE0FFFEEDF8
+      FAFFEDFAFFF0FBFFFEFFFAFFFFF7F9FEFCECF8FFEFFAFFF1F8FFF6FFEBF5FDF2
+      FFF8FFE4D4FDCBC6E6EFFBFBFCFFE6F0D9A7CA7E4ADC5E27E15102E96200F073
+      00F57106FF660BFF6010F76500EF6B0DE36E23CC5A13C7580AF99A50FFECB9FF
+      FFF4F5F7FFF6F7FFFFF5F7FFFFF8FFFFF9F5FAFBEAFFFFDEFEFFE5FFFDEAF4FF
+      FDF3FFFCE6FFD3BFD2E1D0D3D8C1AB9E6A28C96300FF7100FF7507FF6A08F262
+      00E76200F66303FF5F0DFF7500EA6300E05B00FE6C0DFF6C04E85800E27928FE
+      C39CFFF8F7FFF8FFFFF5FDFFF9F7FFFFF8FFFFF4EFFFF7DEFFF1EAF5FFEFF5FF
+      F3F1FFFFFBFFFFF5E8CD8C7E9B4B3AB55C23DE7203FF7C00FF7000FF5E04FD60
+      03F56E06F96C0BF75D0CFF6C00F66900F36D08FE6803FF6400FF6F00F76F0FC3
+      581EFFB9A4FFF2F5FFF9FFFFF8FAFFFFFAFFFFF0FBFFEEF3FFEAFFEFFFFAF6FF
+      F7F3FEFFFBE8FFBC92CD5B2CD15428D46331CA6020DD611AF65F14FF600AFF67
+      00FB6D00F66803F55F0BFF6100FC6602EF6806EF6A08F86C08F76702EE6205E6
+      5F13C65425FFC8B5FFFAF9FBFEFFF6FFFFFAFDF4FFFFF4FFFFEDFFF8FFFFF7F7
+      FFFCEBFFDBBBD05C27F55F11FC6D18D96125C05841C2534BD75538F26621F96C
+      0BEF6000FC6C03FA6400FF690DFF6808FF700FF3731AF57F30FE8839E1620DF9
+      7117EA6C1EC66D3BFFE2D1FFFCFFF5FBFFF9FBFFFFFAFCFFFEFEFAF2F2FFFFEA
+      FFFFD6D87D46E75519FF6411FD6A04DC6411CC5C38CB534DE16051D9562FD350
+      1EEE6828EB6303FD7500FF6508FF5D00FD6000F76E18D6611CE27733F37F2AF1
+      740BEF770DBC5D0DE0A07DFFFBFCFFF3FFF3F2FFFBFAFFF6F4FFF3FFFFFFFFDC
+      FED188CC6614F9611AFB540BFF741CEF6A09E96811EC631FE25026D84B3ED756
+      5BC95347FFB673FB9721DB5B00FF700EFF6C0AF76208E06311F27C2BFF8B2CE5
+      6400EA7600D6700DB75E2BFFD0CBFFF2FFF7F6FFF6FCFFFAF9FDC8E1E3FFFFEC
+      C8995CC86710E9630BF65E10FC6217F86505FB6900FF6800FF6620EF5A4CBA3D
+      4DD97B80E8A28A965C2BD97015E25C04FF6B11F36909DF6300FF7A14FF8920F8
+      6400F67B07F98B25C15815F9A690FFFAFFF2FCFFF5FDFCFFFFF2C3DDD0C9BEB6
+      A26650C26226D6670BE36A0DE05D0EE75B08F46601FF6D0DEC591BCC4628E27B
+      68B671626B3C446D4868C6681CCF5B1CD45B1DCB6310C76200FF8E1CFF700DFF
+      6F1CD35F08D26A0DCE5B0AD47A4BFFF9EAE6FFFEFAFFF7FFFFEAF4FFF0E6C6C0
+      A74B4AD45F40FFC67FC3721DE2924BFFCE97FF966AC95532FFB8A0D4795EDE99
+      71FFCDA9ECBBBD9A678DDE8A50FFC0A4FFB8ABEEAD81C17D24FFC35EFF853FB9
+      4019FFB589FFD184FFA344D0671EFFF2D3E1FFFFEDFBF5FFFEEDF5FFEFFAC5B1
+      D4533AF96041FFBA949E6D45FDEECDFFFEEECF989B924B5BD79CAAF7CED5D3B1
+      ABFFF3DFFFF1CCC16D3DB06943A7565FBF79A2FFF8FFEFC894F9A962FFD1B1E1
+      AAB3F6F0EBFFFFCAFF9B31DC5700FFE0B6DDFFFFE3FCFFFFF9FAFAFFFFF8B392
+      E64C11FF592BFFAD9FC5A7ACE3FFFFC9E0EFA091AC502E4D957D9FB6B0D9BDAE
+      DAFFF7FEFFB76DDE7100AD7356F8B1D2C489D4CAADDBE3CBB5A66D40F8BEB9A0
+      A0C8CFFEFFE7E0A9D65E00FF6C03FFD5A8D6F8FED8FCFFFFF5FFFFFCFEFFB18A
+      FF5E09CC630CD2DEACDFFFF9F3D3C8F79976F79B729C5443B8747BDFAAA7DBD6
+      C7DFF9FF4F46D24602EFA6B0FFF1F8FFF4DEAAE08639FE6C2BE05D31D1AB89A2
+      D9BED6FFF7CA957AEF4D1DFF551DFFD2AAFFFBF1FDFCFFFFF3FFFAFCFFFFC7AA
+      F95104E67116FFFDBAFFFFD9CE8F69FD9763FFAA74D28969B25F50FFBCA0FFFF
+      D9E7D1BF723C7D861CABCA88C3FFEBFF7C798FE5BDCFC96A8F902F68AB81B0FF
+      FFFCFFF9B7EB7817FF5601E85A25FFDDBDFDFFEFE9FCF3FBFFFFD3F3FEFFDCC7
+      EC5C1BF06C11F5A34AEA9F53C85D19F38337FCA55BDB8B4EBF531DFF904BFFA8
+      4CD57D29D0623EDC4653C6484EBB7897B8A8E89F8BEA6F37B86626BC5929A99C
+      6D9EE6885DF55F01FF620ED16731FFF8D1F8FFEAE5FFEEEDFFFFD8FFFFFFF3DC
+      DC6C37E05C09DE6001E66204F2640BDC640BDE892DDE8729EC6503FF5A00FF6B
+      00F56B00F26500FF630DD05725D97356A654607E357378329D7334BA6C38C25E
+      28A1803188B4446EBC4641CF8055FFFFCFF7FFE3F3FFFBF5F5FFE3FFF1FFFFE5
+      E89A6FCF5813FF6E12FF6603FF5E03E4660DF6A13ECC6E00FF6F00FF6800FF6B
+      00FF7600F36900F96900EF8D45FF8531FE6716F3622EC24C419A405D77328264
+      33C54B1EE35F28DD7B379CEBB1BCFFFFE7F3F9E2FBFFFFFFF7FFE0FFDEFFFFE8
+      FFDFBFC2632BF05B03FF6700FF5800F5711DF69B40CF7003F36800FF6A00FF64
+      09E8610BE3700FFF9323F48246E75C06FF6900FF6900FF6B00DE651BC4606086
+      33886E2ABF5924CF4C1FB19C79DAFDE7FFFFF9FFEFF7F0FAFFF2EFFFF7F3FFF9
+      FFFEEADC9A67DE5400FF7103FF6902F16610F08C3AC6660CE47012FF7F33DA56
+      20D3602DF38D44E68726E44F16E95D18F26706FF7300FF7A00FF7003D94A0CE4
+      5535D8534BA84870653AA33226BC7E72FAEFE4FFECF7FBE7FFE8E9FAFFE6FFFF
+      F5FFF8FFE9BEE67820FF6900FF6700F1630AFF9144E87E31C85C14D6672FEA79
+      51F28258DD702CD06405FD6A0AF56C16E86514EC6511F15C01FF5D00FF7008FF
+      6A00FB6400E07C41F7CBF27F74F32018B28D80F3F4EFFFEBF5FCF3F9FFE3F8FF
+      EDFFFFFFFFE9FFC886E16E13E36000F06B13F06D1CFF9240FF9647F9843FF176
+      3CE15F23DE5A07F5740DEF7500FE7300FF6806FF5515FD4F1AFF6014FF6F00F3
+      6800CC6F0CFFEFBDFFF5FCFFE8FFB2A1FF39299FB69DFFFFE2FFFFFBFFF5FCFF
+      EBFAFCF6F8ECFFFFE6FFCC98B1601CC35B0EE05F0AF06105F46504F7690AFF6C
+      12FF6C11FF6B06FD6D00E96F00FF6D00FF6400FF600EFF5F1BFF5606DF5C00B5
+      7126EAD9B8FEFEFEFFF8FFFFF3FFFFECFFC9B9FF6B53B2E6C0FFFFFEF9FFFCF9
+      FAFFFFF8FFFFFDFCF8FFFFF1F8D8B4B8753CD76C22E55E02FC6601FF6F04FF61
+      00FF6500FF7205FE6E00FF6E0FFF7B20FF6A10FF5F00FF6206E25909D0854DF3
+      E5C8F4FFFBF0FBFFFEF8FFFFF7FFFFEDFCFEF3FFD0D0F88289C2FFFFF8FFFFFB
+      FDFBFAFAFFFFF2FBFEF3FAF7FFFFF2FFE8C7D49160CE6C2CD75F13EB650DEF61
+      02F96B06FC750DEB6B02F96109D55C17C26129BC5817CD6218FFB376FFFEDCFF
+      FFF1F2FDEDFDFFFEFBF9FFEBEAFEFFFFFEFFFEEAF7FFF6C5D9E4FFFEFFFFFCFD
+      FFFFFFF7F8F4FEFFF8FFFFF8FAF5ECFFFFF7FFFFF1FFE2C7F0AA85DC8351CD6B
+      2FC35F17C35F0DCB640DCB7200B97320B3865BE0B9AAFFF3E4FFFFE6FFFFDFFF
+      FFEAF6FFFBE9F5FFF4FCFFFAFFFEFAFFEDFFFFEDFFFCEEFFFCFEFAFEFFF6F9FE
+      FAFFFFFBFFF9F7F7E5FFFFF2FFFEFBF4ECF6F4F9FFFFFFFFFFFFF5FFFCE9FFF4
+      DCFFE0BEFFD5A6FFDFA8FFFE8EFFFFB7FFFFE5FAF3FFF4F1FFFFFFFBFFFFE0FE
+      FDE3E2F7FFDCF8FFEBF9FFFFFFF0F7FCDCFFFFF4FFFBFFFFEBF7FFFFFEFAFEFF
+      E4F3F6EFFFFCFDFFF4FFF5E8FFFAFFFFF7FFEAFBFFECFFFFFAFBF1FFFBEFFFFF
+      FBFFFFFEFFFFF7FFFEEFFFFED5FFFFEAFFFFFAF2F2FFFAF8FFFFFBFFFFF5EEFF
+      FFFCEDFDFFDBF3FFF1FDFFFFFFFBFFFFF8FFFEFEFFFDFFFFFDFFFFFFF5FCFEFE
+      ECFFFFDDFCF9F4FFF8FFFFF9FFF0FFFFF5FFE5F7FFE7FFFFFDFFF2FFFFF4F3FB
+      FBE4F8FFEDFBFFFAF7FFFFF0FFF6EBFFF1F6FFFDFDFFFFF8F6FFF9FFFFF6FFFA
+      F4FFFFFFFBFFFFF7F6F9FFF9F0FFFFF5FFFFFBFFE8FFF8C8FFFF}
+    OnClick = btnNasaSolClick
+  end
+  object btnNasaSolDir: TSpeedButton
+    Left = 238
+    Top = 463
+    Width = 23
+    Height = 22
+    Enabled = False
+    Glyph.Data = {
+      36030000424D3603000000000000360000002800000010000000100000000100
+      18000000000000030000232E0000232E00000000000000000001FFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFCFCFCFCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+      CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCD0D0D0FFFFFFFFFFFF4F9DD34398D2
+      4094D03E92CF3E92CE3F92CE3F92CE3F92CE3F92CE3F92CE3F92CE3F92CE3F93
+      CF4C9AD1F1F1F1FFFFFF4499D23F94D0ABFBFF9BF3FF92F1FF93F1FF93F1FF93
+      F1FF93F1FF93F1FF93F1FF93F1FFA6F8FF65B8E3B2C9DAFFFFFF4398D24FA6D9
+      8EDAF5A2EEFF82E5FE84E5FE84E5FE85E6FE85E6FE85E6FE85E6FE84E6FE96EB
+      FF8CD8F570A7CEFFFFFF4296D16BBEE86DBDE6BBF2FF75DEFD77DEFC78DEFC7B
+      DFFC7DDFFC7DDFFC7DDFFC7CDFFC80E0FDADF0FF4D9DD3F1F1F14095D08AD7F5
+      44A1D8DDFDFFDAFAFFDBFAFFDEFAFF74DCFC76DBFA75DAFA74DAFA74DAFA72D9
+      FAA1E8FF7CBFE6B2CADA3E94D0ABF0FF449DD6368CCB368CCB368CCB378BCB5C
+      BEEA6FD9FB6AD6FA68D5F967D4F966D4F982DEFCAAE0F66FA6CE3D92CFB9F4FF
+      73DBFB6BCCF26CCDF36CCEF36DCEF3479CD456BAE9DAF8FFD7F6FFD6F6FFD5F6
+      FFD5F7FFDBFCFF3E94D03C92CFC0F3FF71DAFB74DBFB75DBFC75DBFC76DCFC73
+      DAFA449CD4378CCB368CCB358CCC348DCC3890CE3D94D052A0D53B92CFCAF6FF
+      69D5F96CD5F96BD5F969D5F969D5FA6AD7FB68D4FA5EC7F15EC7F25DC8F2B4E3
+      F83D94D0B0D1E7FFFFFF3B92CFD5F7FF60D1F961D0F8B4EBFDD9F6FFDAF8FFDA
+      F8FFDBF9FFDCFAFFDCFAFFDCFBFFE0FFFF3E95D0D9EAF6FFFFFF3D94D0DCFCFF
+      D8F7FFD8F7FFDBFAFF358ECD3991CE3A92CF3A92CF3A92CF3A92CF3B92CF3D94
+      D061A8D9FFFFFFFFFFFF7DB8E03D94D03A92CF3A92CF3D94D063A9D9FFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
+    OnClick = btnNasaSolDirClick
+  end
+  object cbTot: TCheckBox
+    Left = 519
+    Top = 480
+    Width = 33
+    Height = 17
+    Caption = 'tot'
+    TabOrder = 0
+    OnClick = cbTotClick
+  end
+  object cbVis: TCheckBox
+    Left = 480
+    Top = 480
+    Width = 33
+    Height = 17
+    Caption = 'vis'
+    TabOrder = 1
+    OnClick = cbVisClick
+  end
+  object cbLoc: TCheckBox
+    Left = 558
+    Top = 480
+    Width = 33
+    Height = 17
+    Caption = 'loc'
+    TabOrder = 2
+    OnClick = cbLocClick
+  end
+  object StatusBar1: TStatusBar
+    Left = 0
+    Top = 521
+    Width = 620
+    Height = 19
+    Panels = <
+      item
+        Width = 300
+      end
+      item
+        Alignment = taRightJustify
+        Width = 50
+      end>
+  end
+  object GroupBox1: TPanel
+    Left = 16
+    Top = 8
+    Width = 595
+    Height = 57
+    ParentColor = True
+    TabOrder = 4
+    object Label4: TLabel
+      Left = 32
+      Top = 24
+      Width = 44
+      Height = 13
+      Caption = 'Location:'
+      Transparent = True
+    end
+    object Label5: TLabel
+      Left = 312
+      Top = 24
+      Width = 31
+      Height = 13
+      Caption = 'Label5'
+      Transparent = True
+    end
+    object Label6: TLabel
+      Left = 450
+      Top = 24
+      Width = 31
+      Height = 13
+      Caption = 'Label6'
+      Transparent = True
+    end
+    object ComboBox1: TComboBox
+      Left = 82
+      Top = 21
+      Width = 163
+      Height = 21
+      Style = csDropDownList
+      TabOrder = 0
+      OnChange = ComboBox1Change
+    end
+  end
+  object GroupBox2: TPanel
+    Left = 16
+    Top = 64
+    Width = 145
+    Height = 57
+    ParentColor = True
+    TabOrder = 5
+    object Label7: TLabel
+      Left = 12
+      Top = 22
+      Width = 27
+      Height = 13
+      Caption = 'Date:'
+      Transparent = True
+    end
+    object Label8: TLabel
+      Left = 72
+      Top = 41
+      Width = 31
+      Height = 13
+      Caption = 'Label8'
+      Transparent = True
+    end
+    object Edit1: TEdit
+      Left = 45
+      Top = 17
+      Width = 97
+      Height = 21
+      TabOrder = 0
+      Text = 'Edit1'
+    end
+  end
+  object GroupBox3: TPanel
+    Left = 16
+    Top = 127
+    Width = 145
+    Height = 50
+    ParentColor = True
+    TabOrder = 6
+    object Label14: TLabel
+      Left = 12
+      Top = 24
+      Width = 37
+      Height = 13
+      Caption = 'Label14'
+      Transparent = True
+    end
+  end
+  object GroupBox4: TPanel
+    Left = 167
+    Top = 71
+    Width = 185
+    Height = 50
+    ParentColor = True
+    TabOrder = 7
+    object Label9: TLabel
+      Left = 19
+      Top = 16
+      Width = 26
+      Height = 13
+      Caption = 'Time:'
+      Transparent = True
+    end
+    object Edit2: TEdit
+      Left = 51
+      Top = 14
+      Width = 121
+      Height = 21
+      TabOrder = 0
+      Text = 'Edit2'
+    end
+  end
+  object GroupBox5: TPanel
+    Left = 167
+    Top = 127
+    Width = 234
+    Height = 50
+    ParentColor = True
+    TabOrder = 8
+    object Label12: TLabel
+      Left = 16
+      Top = 16
+      Width = 37
+      Height = 13
+      Caption = 'Label12'
+      Transparent = True
+    end
+    object Label13: TLabel
+      Left = 104
+      Top = 24
+      Width = 37
+      Height = 13
+      Caption = 'Label13'
+      Transparent = True
+    end
+  end
+  object GroupBox6: TPanel
+    Left = 358
+    Top = 71
+    Width = 139
+    Height = 50
+    ParentColor = True
+    TabOrder = 9
+    object Label10: TLabel
+      Left = 13
+      Top = 19
+      Width = 37
+      Height = 13
+      Caption = 'Label10'
+      Transparent = True
+    end
+  end
+  object GroupBox7: TPanel
+    Left = 407
+    Top = 127
+    Width = 90
+    Height = 50
+    ParentColor = True
+    TabOrder = 10
+    object cbRef: TCheckBox
+      Left = 16
+      Top = 24
+      Width = 97
+      Height = 17
+      Caption = 'Refraction'
+      Checked = True
+      State = cbChecked
+      TabOrder = 0
+      OnClick = cbRefClick
+    end
+  end
+  object GroupBox8: TPanel
+    Left = 503
+    Top = 71
+    Width = 108
+    Height = 105
+    ParentColor = True
+    TabOrder = 11
+    object SpeedButton5: TSpeedButton
+      Left = 16
+      Top = 16
+      Width = 25
+      Height = 25
+      Caption = '?'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -19
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      OnClick = SpeedButton5Click
+    end
+    object SpeedButton6: TSpeedButton
+      Left = 47
+      Top = 14
+      Width = 41
+      Height = 22
+      Caption = 'Keys'
+      OnClick = SpeedButton6Click
+    end
+  end
+  object GroupBox10: TPanel
+    Left = 14
+    Top = 190
+    Width = 597
+    Height = 256
+    ParentColor = True
+    TabOrder = 12
+    object Label17: TLabel
+      Left = 18
+      Top = 80
+      Width = 37
+      Height = 13
+      Caption = 'Label17'
+      Transparent = True
+    end
+    object Label18: TLabel
+      Left = 18
+      Top = 116
+      Width = 37
+      Height = 13
+      Caption = 'Label18'
+      Transparent = True
+    end
+    object Label19: TLabel
+      Left = 18
+      Top = 40
+      Width = 32
+      Height = 13
+      Caption = 'Object'
+      Transparent = True
+    end
+    object Label20: TLabel
+      Left = 122
+      Top = 40
+      Width = 32
+      Height = 13
+      Caption = 'rect. '#945
+      Transparent = True
+    end
+    object Label21: TLabel
+      Left = 201
+      Top = 40
+      Width = 32
+      Height = 13
+      Caption = 'decl. '#948
+      Transparent = True
+    end
+    object Label15: TLabel
+      Left = 280
+      Top = 40
+      Width = 11
+      Height = 13
+      Caption = 'az'
+      Transparent = True
+    end
+    object Label16: TLabel
+      Left = 359
+      Top = 40
+      Width = 30
+      Height = 13
+      Caption = 'height'
+      Transparent = True
+    end
+    object Label22: TLabel
+      Left = 438
+      Top = 40
+      Width = 40
+      Height = 13
+      Caption = 'distance'
+      Transparent = True
+    end
+    object Label23: TLabel
+      Left = 517
+      Top = 40
+      Width = 29
+      Height = 13
+      Caption = 'phase'
+      Transparent = True
+    end
+    object Label24: TLabel
+      Left = 480
+      Top = 213
+      Width = 18
+      Height = 13
+      Caption = 't1='
+      Transparent = True
+    end
+    object Label25: TLabel
+      Left = 32
+      Top = 176
+      Width = 37
+      Height = 13
+      Caption = 'Label25'
+      Transparent = True
+    end
+    object Label26: TLabel
+      Left = 32
+      Top = 198
+      Width = 37
+      Height = 13
+      Caption = 'Label26'
+      Transparent = True
+    end
+    object Label27: TLabel
+      Left = 32
+      Top = 217
+      Width = 37
+      Height = 13
+      Caption = 'Label27'
+      Transparent = True
+    end
+    object Label28: TLabel
+      Left = 499
+      Top = 144
+      Width = 23
+      Height = 13
+      Caption = 'Faza'
+      Transparent = True
+    end
+    object Edit3: TEdit
+      Left = 104
+      Top = 72
+      Width = 73
+      Height = 21
+      ReadOnly = True
+      TabOrder = 0
+    end
+    object Edit4: TEdit
+      Left = 183
+      Top = 72
+      Width = 73
+      Height = 21
+      ReadOnly = True
+      TabOrder = 1
+    end
+    object Edit5: TEdit
+      Left = 262
+      Top = 72
+      Width = 73
+      Height = 21
+      ReadOnly = True
+      TabOrder = 2
+    end
+    object Edit6: TEdit
+      Left = 341
+      Top = 72
+      Width = 73
+      Height = 21
+      ReadOnly = True
+      TabOrder = 3
+    end
+    object Edit7: TEdit
+      Left = 420
+      Top = 72
+      Width = 73
+      Height = 21
+      ReadOnly = True
+      TabOrder = 4
+    end
+    object Edit8: TEdit
+      Left = 104
+      Top = 108
+      Width = 73
+      Height = 21
+      ReadOnly = True
+      TabOrder = 5
+    end
+    object Edit9: TEdit
+      Left = 183
+      Top = 108
+      Width = 73
+      Height = 21
+      ReadOnly = True
+      TabOrder = 6
+    end
+    object Edit10: TEdit
+      Left = 262
+      Top = 108
+      Width = 73
+      Height = 21
+      ReadOnly = True
+      TabOrder = 7
+    end
+    object Edit11: TEdit
+      Left = 341
+      Top = 108
+      Width = 73
+      Height = 21
+      ReadOnly = True
+      TabOrder = 8
+    end
+    object Edit12: TEdit
+      Left = 420
+      Top = 108
+      Width = 73
+      Height = 21
+      ReadOnly = True
+      TabOrder = 9
+    end
+    object Edit13: TEdit
+      Left = 499
+      Top = 108
+      Width = 73
+      Height = 21
+      ReadOnly = True
+      TabOrder = 10
+    end
+    object Edit14: TEdit
+      Left = 511
+      Top = 208
+      Width = 66
+      Height = 21
+      Hint = 'ddsdsdsdsdsds'
+      ParentShowHint = False
+      ShowHint = False
+      TabOrder = 11
+      Text = 'Edit14'
+    end
+  end
+end

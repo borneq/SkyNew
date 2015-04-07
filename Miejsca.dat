@@ -1,0 +1,28 @@
+﻿10
+Gliwice - Sikornik
+50.27736 18.65556
+Gliwice - Rynek
+50.29491 18.666923
+Gliwice - Politechnika (AEI)
+50.28981 18.67871
+Bielsko-Biała
+49.8 19.05
+Katowice - PKP
+50.25721 19.020312
+Katowice - Rondo Ziętka
+50.2641441 19.0262441
+Szczecin
+53.41666 14.5
+Wrocław
+51.0833 17.0
+Warszawa - PKP (Dw.Centr.)
+52.228849 21.00439
+Norymberga
+49.45 11.4166
+
+Uwaga! Dane w tym pliku MUSZĄ być poprawne.
+Program nie sprawdza ich poprawności.
+Format danych:
+  W pierszym wierszu liczba miejsc (najwyżej 70).
+  Dalej: po dwa wiersze na miejsce: nazwa i współrzędne (szerokość, długość).
+Program obsługuje poprawnie obszar Polski.
