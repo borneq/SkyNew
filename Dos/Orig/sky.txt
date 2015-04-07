@@ -1,0 +1,188 @@
+--------------------------------------------------------------------------------
+
+	              Program SKY - kr¢tki opis.
+
+                (Litery polskie w standardzie Latin 2)
+
+  Program powstaje juæ kilka lat (!), r¢wnieæ wersja, kt¢rej dotyczy opis,
+nie jest wersj• ostateczn•. Ma on dostarczaÜ informacji o poàoæeniu obiekt¢w
+Ukàadu Sàonecznego wzgl©dem Ziemi. Wersja z pa´dziernika 1992 umoæliwia:
+
+- obliczanie wsp¢àrz©dnych biegunowych obiekt¢w;
+- obliczanie wsp¢àrz©dnych horyzontalnych obiekt¢w;
+- obliczanie faz Ksi©æyca;
+- obliczanie wschod¢w i zachod¢w Sào‰ca;
+- obliczanie zaÜmie‰ Sào‰ca i Ksi©æyca;
+- uwzgl©dnianie (lub nie) refrakcji atmosferycznej;
+- obsàug© myszki;
+- ustawianie daty, czasu, miejsca obserwacji, strefy czasowej;
+- uwzgl©dnianie r¢ænicy mi©dzy czasem UTC (korygowanym) a UT.
+
+  Po uruchomieniu programu na ekranie wyòwietlana jest informacja o autorze
+(tj. o mnie), a nast©pnie o obsàudze programu. Po naciòni©ciu klawisza ukazuje
+si© juæ "wàaòciwy" ekran. Zawiera on nast©puj•ce dane:
+
+1. Nazw© i wsp¢àrz©dne miejsca obserwacji (dodatnie - N i E);
+2. Aktualn• dat© (w formacie polskim: ROK-MIESI§C-DZIE„) i dzie‰ tygodnia;
+3. Aktualn• dat© julia‰ska;
+4. Aktualny czas (GODZINA:MINUTY:SEKUNDY);
+5. Numer wybranej strefy czasowej z ewentualnym komentarzem;
+6. R¢ænic© UT-UTC dla wybranej daty w sekundach;
+7. Stan przeà•cznika wà•czaj•cego uwzgl©dnianie refrakcji atmosferycznej;
+8. Ramk© wynik¢w oblicze‰, a w niej dla kaædego obiektu:
+   - nazw© obiektu;
+   - deklinacj© obiektu;
+   - rektascensj© obiektu;
+   - azymut obiektu (liczony w stopniach od p¢ànocy na wsch¢d);
+   - wysokoòÜ obiektu (w stopniach nad horyzontem);
+   - faz© obiektu (dla obiekt¢w poza Sào‰cem), podawan• jako k•t
+     o wierzchoàku w punkcie obserwacji (w poprzedniej wersji - w òrodku Ziemi),
+     jednym ramieniu przechodz•cym przez Sào‰ce, a drugim przez dany obiekt;
+   - w przypadku wyst•pienia zaÜmienia za faz• wyòwietlana jest litera E;
+9. Nazwy obiekt¢w, kt¢rych zaÜmienia moæe wyznaczyÜ program.
+
+ad 1.
+  W programie na staàe wpisaàem wp¢àrz©dne ok. 70 miejsc wraz z ich nazwami;
+pierwsza cz©òÜ to miejsca w Gliwicach, nast©pna - miasta i miejscowoòci
+wojew¢dztwa katowickiego, trzecia - m&m Polski (poza woj. katowickim)
+i ostatnia - miasta na òwiecie poza Polsk•. Miejsce obserwacji moæna zmieniaÜ
+korzystaj•c z klawiatury (n - nast©pne miejsce, N - porzednie) lub myszy
+(przez wskazanie kursorem wiersza ze wsp¢àrz©dnymi miejsca obserwacji i zmian©
+lewym lub prawym przyciskiem).
+
+ad 2.
+  Dat© ustawia si© klawiszami:
+r,R:  +/- dziesi©Ü lat;
+y,Y:  +/- jeden rok;
+m,M:  +/- jeden miesi•c w granicach roku;
+d,D:  +/- jeden dzie‰ w granicach miesi•ca;
+j,J:  +/- jeden dzie‰ (bez ogranicze‰).
+  Moæna r¢wnieæ uæyÜ myszki - wskazuj•c odpowiedni• cz©òÜ daty i naciskaj•c
+lewy (zmniejszenie) lub prawy (zwi©kszenie) przycisk.
+  órodkowy przycisk myszki i klawisz C ustawia aktualn• (odzytan• z zegara 
+systemowego) dat© i czas (pod warunkiem, æe jest ona p¢´niejsza od daty 
+zapisanej w programie jako aktualna).
+  Lata przed nasz• er• oznaczane s• jako ujemne; nie ma roku zerowego (po -1
+nast©puje rok 1); do 4 pa´dziernika 1582 obowi•zuje kalendarz julia‰ski,
+od 15 pa´dziernika 1582 - gregoria‰ski.
+
+ad 3.
+  Stosowanie daty julia‰skiej zaproponowane zostaào w 1581 roku przez 
+J.Scaligera. Jest to czas, jaki upàyn•à od 1 stycznia 4713 p.n.e. do danej daty,
+wyraæony w dniach. Pocz•tek doby julia‰skiej przypada na poàudnie czasu UTC.
+
+ad 4.
+  Klawiatura:
+h,H: +/- jedna godzina w granicach dnia;
++,-: +/- jedna minuta (bez ogranicze‰);
+s,S: +/- jedna sekunda (r¢wnieæ bez ogranicze‰).
+  Obsàuga myszki - podobnie jak dla daty.
+
+ad 5.
+  Strefy czasowe nie pokrywaj• si© z poàudnikami, ale z granicami politycznymi.
+Stref© naleæy ustawiÜ niezaleænie od wybranego miejsca obserwacji. Dla Polski
+jest to strefa 1 - CET (Central European Time) lub 2 (w lecie).
+  Klawiatura:
+z,Z: +/- jedna strefa czasowa
+  Myszka: j.w.
+
+ad 6.
+  Ziemia zwalnia swoje obroty i dlatego konieczne jest korygowanie czasu
+(przewaænie robi si© to dodaj•c jedn• sekund© po ostatnim dniu czerwca
+i grudnia). Dokàadny charakter zmian pr©dkoòci Ziemi nie jest znany, dlatego
+nie jest moæliwe dokàadne wyznaczenie r¢ænicy UT-UTC dla dowolnej daty
+w przyszàoòci. Program oblicza t© r¢ænic© z dokàadnoòci• p¢àsekundow• dla lat
+1800..1986 (r¢ænica jest znana z obserwacji), dla innych - przybliæa wzorem
+ekstrapoluj•cym dotychczasowe obserwacje. 
+  Oczywiòcie wartoòÜ w ramce dT zaleæy od ustawionej daty.
+
+ad 7.
+  ówiatào przechodz•c mi©dzy oòrodkami o r¢ænych wsp¢àczynnikach zaàamania
+ulega zaàamaniu - zmienia sw¢j kierunek. Powietrze ma r¢æny wsp¢àczynnik 
+zalamania òwiatàa w zaleænoòci od wysokoòci nad ziemi• (i ew. warunk¢w 
+fizycznych - gà¢wnie temperatury). Promienie docieraj•ce do obserwatora na Ziemi
+z odlegàych obiekt¢w ulegej• zaàamaniu tym wi©kszemu, im bliæej horyzontu s•
+widoczne (tzn. im wi©ksza jest ich odlegàoòÜ zenitalna). Na horyzoncie
+refracja jest r¢wna ok. 35 minut k•towych (dla por¢wnania - Sào‰ce ma òrednic©
+k•tow• ok. 30 minut k•towych). Gdy przeà•cznik Ref ustawiony jest na YES,
+ugi©cie òwiatàa uwzgl©dniane jest przy obliczaniu wysokoòci obiektu nad
+horyzontem (oczywiòcie tylko wtedy, gdy moæe on byÜ obserwowany, tzn. znajduje
+si© powyæej horyzontu (po uwzgl©dnieniu refrakcji)).
+
+ad 8.
+Obiekty - na razie tylko Sào‰ce i Ksi©æyc.
+Deklinacja - odpowiada szerokoòci geograficznej.
+Rektascensja - odpowiada dàugoòci geograficznej.
+Azymut - liczony od p¢ànocy na wsch¢d.
+WysokoòÜ - liczona w stopniach od horyzontu.
+OdlegàoòÜ - wyraæona w kilometrach od òrodka Ziemi do òrodka obiektu.
+Faza - opis niæej.
+
+
+FAZY KSI®ΩYCA
+--------------
+Naciskaj•c f (F) lub wskazuj•c obliczon• faz© Ksi©æyca myszka (i naciskaj•c
+przycisk lewy lub prawy) moæna obliczyÜ kolejne fazy Ksi©æyca. Przez sekund©
+wyòwietlany jest opis (now, pelnia itd.), a nast©pnie - k•t.
+W przypadku, gdy jego wartoòÜ jest mniejsza od 0.5 stopnia (>179.5), wyòwietlana
+jest litera E oznaczaj•ca zaÜmienie - w przypadku nowiu Sào‰ca, a peàni - 
+Ksi©æyca. 
+
+
+WSCHODY I ZACHODY SùO„CA
+------------------------
+Naciskaj•c klawisz w (W) lub wskazuj•c kursorem myszki wysokoòÜ Sào‰ca (height)
+(i naciskaj•c przycisk lewy lub prawy) moæna wyznaczyÜ moment przejòcia òrodka
+tarczy sàonecznej przez lini© horyzontu (tj. moment, dla kt¢rego wsp¢àrz©dna 
+height = 0 ). Moment ten zaleæy od daty, wybranego miejsca obserwacji i faktu 
+uwzgl©dniania (lub nie) refrakcji atmosferycznej.
+Uwaga. W kalendarzach podawane s• momenty wschodu i zachodu dla "g¢rnej" kraw©-
+dzi terczy sàonecznej, a nie (jak tu) dla jej òrodka.
+W punktach obserwacji odlegàych o ok. 3 kilometry r¢ænice wyznaczonych moment¢w
+mog• si©gaÜ nawet 10 sekund.
+
+
+
+ad 9.
+Wskazuj•c kursorem myszki jeden ze znak¢w "<" lub ">" s•siaduj•cych z nazw•
+obiektu moæna znale´Ü najbliæsze przeszàe lub przyszàe zaÜmienie obiektu
+(Sào‰ca przez Ksi©æyc, Ksi©æyca przez Ziemi©).
+Trzy przeà•czniki umieszczone za nazwami obiekt¢w umoæliwiaj• okreòlenie,
+jakiego typu zaÜmie‰ maj• dotyczyÜ obliczenia (stan aktywny - duæe litery):
+VIS - tylko zaÜmienia, dla kt¢rych obiekt jest widoczny ponad horyzontem;
+TOT - tylko zaÜmienia caàkowite; UWAGA: dla Sào‰ca przy wà•czonej opcji TOT
+      poszukiwane s• zaÜmienia widoczne jako caàkowite GDZIEKOLWIEK na Ziemi  
+      (najcz©òciej w miejscu obserwacji nie s• one caàkowite);
+LOC - dla zaÜmie‰ Sào‰ca: tylko zaÜmienia widziane jako caàkowite w miejscu
+      obserwacji.
+Sterowanie klawiatur•: 
+1,2 - z. Sào‰ca;
+3,4 - z. Ksi©æyca;
+5,6,7 - przeà•czniki VIS, TOT, LOC.
+
+
+
+
+--------------------------------------------------------------------------------
+
+  Istniej• przer¢bki programu SKY (pisane raczej na uæytek wàasny) obliczaj•ce
+wschody i zachody Sào‰ca (pt. SUNRISE) oraz wykreòlaj•ce zegary sàoneczne
+(pt. SUNCLOCK).
+
+--------------------------------------------------------------------------------
+
+  Program jeszcze nic nie kosztuje (prawdopodobnie i tak nie ma to æadnego
+znaczenia w przypadku kopiowania). Prosz© o kopiowanie programu wraz z opisem
+i nie dokonywanie zmian. Program zostaà skompilowany kompilatorem 
+Turbo Pascal 5.0. 
+
+--------------------------------------------------------------------------------
+                             Gliwice, 1991-10-02
+--------------------------------------------------------------------------------
+
+Autor:  	Piotr C. Fabian
+		skr. poczt.  12
+		44102 Gliwice 2
+
+--------------------------------------------------------------------------------
+

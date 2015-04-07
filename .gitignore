@@ -24,6 +24,7 @@ SkyNew.res
 
 # Delphi compiler-generated binaries (safe to delete)
 *.exe
+!Dos/Orig/sky.exe
 *.dll
 *.bpl
 *.bpi
